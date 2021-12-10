@@ -1,21 +1,21 @@
 <template>
   <button
     :class="[
-      'fx-button',
-      `fx-button--size-${size}`,
-      `fx-button--type-${type}`,
-      `fx-button--state-${state}`,
+      'q-button',
+      `q-button--size-${size}`,
+      `q-button--type-${type}`,
+      `q-button--state-${state}`,
       {
-        'fx-button--disabled':disabled,
-        'fx-button--loading':loading,
+        'is--disabled':disabled,
+        'is--loading':loading,
       }
     ]"
     :type="nativeType"
     :autofocus="autofocus"
     @click="handleClick"
   >
-    <span class="fx-button-icon" v-if="loading || icon">
-      <!-- <fx-icon-loading v-if="loading" name="fx-icon-loading"></fx-icon-loading> -->
+    <span class="q-button-icon" v-if="loading || icon">
+      <!-- <q-icon-loading v-if="loading" name="q-icon-loading"></q-icon-loading> -->
       <!-- <component v-else :is="icon"></component> -->
       <q-icon v-if="loading" name="q-icon-loading"></q-icon>
       <q-icon :name="icon"></q-icon>

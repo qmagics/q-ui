@@ -328,8 +328,63 @@ $btnSizes: ("mini": ("height": 22px,
 
     @each $size,
     $item in $btnSizes {
-        @include m($size) {
+        @include m('size-'+$size) {
             height: map.get($item, "height");
+        }
+    }
+
+    .#{$namespace}-button-icon {
+        margin-right: 5px;
+    }
+
+    @include when(disabled) {
+        cursor: not-allowed;
+    }
+
+    @include when(loading) {
+        cursor: default;
+    }
+
+    @each $type,
+    $item in $btn {
+        @include m('type-'+$type) {
+
+            @each $stateKey,
+            $stateItem in $item {
+                &.#{$namespace}-button--state-#{$stateKey} {
+                    color: map.get($stateItem, "text-color", "default");
+                    background-color: map.get($stateItem, "bg-color", "default");
+                    border-color: map.get($stateItem, "border-color", "default");
+
+                    &:hover {
+                        color: map.get($stateItem, "text-color", "hover");
+                        background-color: map.get($stateItem, "bg-color", "hover");
+                        border-color: map.get($stateItem, "border-color", "hover");
+                    }
+
+                    &:active {
+                        color: map.get($stateItem, "text-color", "active");
+                        background-color: map.get($stateItem, "bg-color", "active");
+                        border-color: map.get($stateItem, "border-color", "active");
+                    }
+
+                    &.is--disabled {
+                        // @include m(disabled) {
+                        color: map.get($stateItem, "text-color", "disabled");
+                        background-color: map.get($stateItem, "bg-color", "disabled");
+                        border-color: map.get($stateItem, "border-color", "disabled");
+                        // }
+                    }
+
+                    &.is--loading {
+                        // @include m(loading) {
+                        color: map.get($stateItem, "text-color", "loading");
+                        background-color: map.get($stateItem, "bg-color", "loading");
+                        border-color: map.get($stateItem, "border-color", "loading");
+                        // }
+                    }
+                }
+            }
         }
     }
 }
