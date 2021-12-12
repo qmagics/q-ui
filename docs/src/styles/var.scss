@@ -1,0 +1,29 @@
+$headerHeight:60px;
+$leftAsideWidth:260px;
+$rightAsideWidth:180px;
+$gutter:10px;
+$padding:20px;
+$radius:2px;
+
+body {
+    --color-font-base: #303d49;
+    --color-border-light: rgb(226, 232, 236);
+    --color-bg-light: rgb(238, 242, 246);
+    --color-bg-white: #fff;
+    --color-primary: #0088ff;
+    --color-primary-light: #4dacff;
+}
+
+body[theme=dark] {
+    --color-font-base: #fff;
+    --color-border-light: rgb(34, 34, 34);
+    --color-bg-light: #232324;
+    --color-bg-white: #17171a;
+}
+
+$colorFontBase:var(--color-font-base);
+$colorPrimary: var(--color-primary);
+$colorPrimaryLight: var(--color-primary-light);
+$colorBorderLight:var(--color-border-light);
+$colorBgLight:var(--color-bg-light);
+$colorBgWhite:var(--color-bg-white);

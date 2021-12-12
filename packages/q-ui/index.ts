@@ -13,7 +13,7 @@ const install = (app: App): void => {
     })
 }
 
-interface Plugin {
+export interface Plugin {
     install: (app: App) => void;
 }
 

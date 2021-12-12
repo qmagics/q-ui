@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [vue()],
   root: path.resolve(__dirname, './'),
   resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.scss', 'sass', '.json'],
     alias: [
       {
         find: /^q-ui$/,
@@ -14,7 +15,18 @@ export default defineConfig({
       {
         find: /^@q-ui\/(.+)/,
         replacement: `${path.resolve(__dirname, `../packages`)}/$1/index.ts`,
+      },
+      {
+        find: /^@\/(.+)/,
+        replacement: path.resolve(__dirname, `./src`) + '/$1',
       }
     ]
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/styles/mixin.scss";@import "@/styles/var.scss";`
+      }
+    }
+  }
 })
