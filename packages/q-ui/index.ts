@@ -9,11 +9,14 @@ const components = [
 
 const install = (app: App): void => {
     components.forEach(component => {
-        console.log(component)
         app.component(component.name, component);
     })
 }
 
+interface Plugin {
+    install: (app: App) => void;
+}
+
 export default {
     install
-}
+} as Plugin
