@@ -1,7 +1,7 @@
 <template>
   <div class="page page-component">
     <aside class="page-aside page-aside--left">
-      
+      <app-menu :items="menus" root="/component"></app-menu>
     </aside>
     <main class="page-main">
       <router-view></router-view>
@@ -14,9 +14,18 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import AppMenu from "@/components/AppMenu.vue";
+import menus from "./menus";
 
 export default defineComponent({
-  setup() {},
+  components: {
+    AppMenu,
+  },
+  setup() {
+    return {
+      menus,
+    };
+  },
 });
 </script>
 
