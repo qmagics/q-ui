@@ -2,10 +2,10 @@
 @import "./common/var.scss";
 @import "./mixins/mixin.scss";
 
-$btn-prefix: "fx-button";
+$cname: $namespace+'-'+"button";
 $btn-border-radius: 3px;
 $btn-border-width: 1px;
-$btn-padding-h: 16px;
+$btn-padding-h: 14px;
 
 $btn: ("primary": ("default": ("text-color": ("default": $color-white,
                 "disabled": $color-white,
@@ -342,6 +342,12 @@ $btnSizes: ("mini": ("height": 22px,
         margin-right: 5px;
     }
 
+    @include when(icon-only) {
+        .#{$namespace}-button-icon {
+            margin-right: 0;
+        }
+    }
+
     @include when(disabled) {
         cursor: not-allowed;
     }
@@ -393,75 +399,3 @@ $btnSizes: ("mini": ("height": 22px,
         }
     }
 }
-
-// .#{$btn-prefix} {
-//     position: relative;
-//     display: inline-block;
-//     box-sizing: border-box;
-//     font-weight: 400;
-//     line-height: 1.5715;
-//     white-space: nowrap;
-//     outline: none;
-//     cursor: pointer;
-//     transition: all 0.1s cubic-bezier(0, 0, 1, 1);
-//     -webkit-appearance: none;
-//     user-select: none;
-//     border: $btn-border-width solid transparent;
-//     border-radius: $btn-border-radius;
-//     padding: 0 $btn-padding-h;
-
-//     &-icon {
-//         margin-right: 5px;
-//     }
-
-//     @each $size, $item in $btnSizes {
-//         &--size-#{$size} {
-//             height: map.get($item, "height");
-//         }
-//     }
-
-//     &.#{$btn-prefix}--disabled {
-//         cursor: not-allowed;
-//     }
-
-//     &.#{$btn-prefix}--loading {
-//         cursor: default;
-//     }
-
-//     @each $type, $item in $btn {
-
-
-//         &--type-#{$type} {
-//             @each $stateKey, $stateItem in $item {
-//                 &.#{$btn-prefix}--state-#{$stateKey} {
-//                     color: map.get($stateItem, "text-color", "default");
-//                     background-color: map.get($stateItem, "bg-color", "default");
-//                     border-color: map.get($stateItem, "border-color", "default");
-
-//                     &:hover {
-//                         color: map.get($stateItem, "text-color", "hover");
-//                         background-color: map.get($stateItem, "bg-color", "hover");
-//                         border-color: map.get($stateItem, "border-color", "hover");
-//                     }
-//                     &:active {
-//                         color: map.get($stateItem, "text-color", "active");
-//                         background-color: map.get($stateItem, "bg-color", "active");
-//                         border-color: map.get($stateItem, "border-color", "active");
-//                     }
-
-//                     &.#{$btn-prefix}--disabled {
-//                         color: map.get($stateItem, "text-color", "disabled");
-//                         background-color: map.get($stateItem, "bg-color", "disabled");
-//                         border-color: map.get($stateItem, "border-color", "disabled");
-//                     }
-
-//                     &.#{$btn-prefix}--loading {
-//                         color: map.get($stateItem, "text-color", "loading");
-//                         background-color: map.get($stateItem, "bg-color", "loading");
-//                         border-color: map.get($stateItem, "border-color", "loading");
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }

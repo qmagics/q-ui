@@ -6,8 +6,9 @@
       `q-button--type-${type}`,
       `q-button--state-${state}`,
       {
-        'is--disabled':disabled,
-        'is--loading':loading,
+        'is--disabled': disabled,
+        'is--loading': loading,
+        'is--icon-only': !$slots.default
       }
     ]"
     :type="nativeType"

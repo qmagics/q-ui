@@ -7,7 +7,9 @@ $radius:2px;
 
 body {
     --color-font-base: #303d49;
-    --color-border-light: rgb(226, 232, 236);
+    --color-font-light: #526374;
+    
+    --color-border-light: #e5e6eb;
     --color-bg-light: rgb(238, 242, 246);
     --color-bg-white: #fff;
     --color-primary: #0088ff;
@@ -16,12 +18,14 @@ body {
 
 body[theme=dark] {
     --color-font-base: #fff;
-    --color-border-light: rgb(34, 34, 34);
+    --color-border-light: #333335;
     --color-bg-light: #232324;
     --color-bg-white: #17171a;
 }
 
 $colorFontBase:var(--color-font-base);
+$colorFontLight:var(--color-font-light);
+
 $colorPrimary: var(--color-primary);
 $colorPrimaryLight: var(--color-primary-light);
 $colorBorderLight:var(--color-border-light);
