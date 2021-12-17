@@ -38,16 +38,30 @@ body {
             width: $leftAsideWidth;
         }
 
-        &--right {
-            right: 0;
-            width: $rightAsideWidth;
-        }
+        // &--right {
+        //     right: 0;
+        //     width: $rightAsideWidth;
+        // }
     }
 
     &-main {
-        background-color: $colorBgWhite;
-        padding: $padding;
-        margin: #{$headerHeight+$gutter - 2px} $rightAsideWidth+$gutter 0 $leftAsideWidth+$gutter;
-        border-radius: $radius;
+        margin: #{$headerHeight+$gutter - 2px} 0 0 $leftAsideWidth+$gutter;
+
+        .demo-page__main {
+            background-color: $colorBgWhite;
+            padding: $padding;
+            border-radius: $radius;
+            margin-right: #{$rightAsideWidth+$gutter};
+        }
+
+        .demo-page__aside {
+            background-color: $colorBgWhite;
+            width: $rightAsideWidth;
+            position: fixed;
+            border-radius: $radius 0;
+            right: 0;
+            top: $headerHeight+$gutter - 2px;
+            padding: 20px;
+        }
     }
 }

@@ -1,5 +1,5 @@
 <template>
-  <AppHeader> </AppHeader>
+  <AppHeader></AppHeader>
   <AppMain>
     <router-view></router-view>
   </AppMain>
@@ -8,12 +8,15 @@
 import { defineComponent, ref } from "vue";
 import AppHeader from "@/components/AppHeader.vue";
 import AppMain from "@/components/AppMain.vue";
+import useAnchorScroll from "@/hooks/useAnchorScroll";
 
 export default defineComponent({
   components: {
     AppHeader,
     AppMain
   },
-  setup() {},
+  setup() {
+    useAnchorScroll();
+  },
 });
 </script>

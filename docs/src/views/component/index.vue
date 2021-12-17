@@ -6,14 +6,14 @@
     <main class="page-main">
       <router-view></router-view>
     </main>
-    <aside class="page-aside page-aside--right">
-      <p v-for="i in 100">...</p>
-    </aside>
+    <!-- <aside class="page-aside page-aside--right">
+      
+    </aside>-->
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, onBeforeUnmount, onMounted, } from "vue";
 import AppMenu from "@/components/AppMenu.vue";
 import menus from "./menus";
 
@@ -26,6 +26,7 @@ export default defineComponent({
       menus,
     };
   },
+
 });
 </script>
 
@@ -34,8 +35,8 @@ export default defineComponent({
   &__aside {
   }
   &__main {
-    padding: 20px;
-    background-color: $colorBgWhite;
+    // padding: 20px;
+    // background-color: $colorBgWhite;
   }
 }
 </style>
