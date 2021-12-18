@@ -11,9 +11,10 @@
     "test": "__tests__"
   },
   "publishConfig": {
-    "registry": "https://registry.npmmirror.com/"
+    "registry": "https://registry.npmjs.com/"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
-  }
+  },
+  "gitHead": "49313a571d62bb439235319d0713b6885615bb63"
 }
