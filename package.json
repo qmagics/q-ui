@@ -5,6 +5,9 @@
     "packages/*",
     "docs"
   ],
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "dev:docs": "vite --config ./docs/vite.config.ts",
     "build:docs": "vite build --config ./docs/vite.config.ts",
