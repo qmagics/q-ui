@@ -4,7 +4,7 @@
   "description": "> TODO: description",
   "author": "qmagics <949959378@qq.com>",
   "homepage": "",
-  "license": "ISC",
+  "license": "MIT",
   "main": "lib/button.js",
   "directories": {
     "lib": "lib",
@@ -19,5 +19,5 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
-  "gitHead": "49313a571d62bb439235319d0713b6885615bb63"
+  "gitHead": "3b18d3a341bf3927d93ae5b7e469978d907afc18"
 }

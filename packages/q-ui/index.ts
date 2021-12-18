@@ -2,8 +2,6 @@ import { App } from 'vue';
 import Button from '@q-ui/button';
 import Icon from '@q-ui/icon';
 
-console.log("v")
-
 const components = [
     Button,
     Icon,
